@@ -1,0 +1,97 @@
+Using Tau 
+1T= .63
+2T= .87
+3T= .95
+4T= .98
+
+After normalizing against max of each channel, dummy set overfits training
+at 97.5, validation 91.5 @Epoch30
+T: 8, 13, 19,
+
+Trying for thiner hidden layers
+512,256 -> 256,128 
+30 Epochs: .89032 Train, .83047 Val
+T: 6, 10, 
+
+256,128 -> 128,64
+30 Epochs: .97864 Train, .92224 Val
+T: 8, 11, 18,
+30 Epochs: .95807 Train, .89930 Val
+T: 9, 15, 30
+
+128,64->128
+30 Epochs: .93687 Train, .88337 Val
+T: 8, 12, 18, 
+
+256,64
+30 Epochs: .95728 Train, .90631 Val
+T: 7, 11, 20, 27
+30 Epochs: .97991 Train, .92925 Val
+T: 6, 13, 20, 
+
+Testing for 256,64 and 128,64 after data augmentation
+Due to issues with floating pint, can´t rotate, so generating extra data first
+
+After Augmenting (min 1000 data) with full dataset:
+256,64
+30 Epochs, 128 Batch, nu=.0005: .98423 Train, .97441 Val
+T:2, 3, 6, 8
+
+After Augmenting (min 1000 data) with full dataset:
+256,64
+30 Epochs, 64 Batch, nu=.0005:  .98869 Train, .97883 Val
+T: 1, 3, 5, 8
+
+After Augmenting (min 1000 data) with full dataset:
+256,64
+30 Epochs, 256 Batch, nu=.0005:  .98914 Train, .97667 Val
+T: 3, 5, 10, 17,
+
+After Augmenting (min 1000 data) with full dataset:
+256,64
+30 Epochs, 256 Batch, nu=.0001:  .98281 Train, .96459 Val
+T: 4, 9, 19, 
+
+After Augmenting (min 1000 data) with full dataset:				!!!
+256,64
+40 Epochs, 256 Batch, nu=.0002:  .99644 Train, .98450 Val
+T: 3, 6, 14, 21
+
+After normalizing around half the maximum:
+After Augmenting (min 1000 data) with full dataset:
+256,64
+40 Epochs, 256 Batch, nu=.0002:  .99441 Train, .98288 Val
+T: 3, 5, 10, 17
+
+After normalizing around half the maximum:
+After Augmenting (min 1000 data) with full dataset:
+256,64
+40 Epochs, 256 Batch, nu=.00005:  .97881 Train, .96342 Val
+T: 5, 12, 28, 
+	Could go higher with more epochs or lower batch, will try
+	augmenting nu
+
+After normalizing around half the maximum:
+After Augmenting (min 1000 data) with full dataset:
+256,64
+40 Epochs, 256 Batch, nu=.00008:  .99223 Train, .97748 Val
+T: 4, 11, 17, 33
+
+After normalizing around half the maximum:
+After Augmenting (min 1000 data) with full dataset:
+256,64
+40 Epochs, 128 Batch, nu=.00008:  .99101 Train, .97205 Val
+T: 3, 6, 13, 36
+
+After normalizing around half the maximum:
+After Augmenting (min 1000 data) with full dataset:
+256,64
+60 Epochs, 128 Batch, nu=.00005:  .99428 Train, .97964 Val
+T: 4, 9, 18, 
+
+After normalizing around half the maximum:
+After Augmenting (min 1000 data) with full dataset:
+256,64
+60 Epochs, 256 Batch, nu=.0001:  .99570 Train, .98261 Val
+T: 3, 7, 14, 23
+	4,10,21
